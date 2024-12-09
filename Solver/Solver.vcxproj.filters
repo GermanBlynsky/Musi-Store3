@@ -18,10 +18,10 @@
     <ClInclude Include="Composition.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Performer.h">
+    <ClInclude Include="Author.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Media.h">
+    <ClInclude Include="Product.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Store.h">
@@ -32,10 +32,10 @@
     <ClCompile Include="Composition.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Performer.cpp">
+    <ClCompile Include="Author.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Media.cpp">
+    <ClCompile Include="Product.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Store.cpp">
