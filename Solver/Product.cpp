@@ -17,6 +17,11 @@ namespace MusicStore {
     }
 
 
+    std::shared_ptr<Product> Product::createProduct(std::shared_ptr<Composition> composition, double price, std::string address, std::string carrier)
+    {
+        return std::make_shared<Product>(Product(composition, price, address, carrier));
+    }
+
     std::shared_ptr<Composition> Product::getComposition() const {
         return composition;
     }

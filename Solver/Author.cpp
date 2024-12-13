@@ -1,5 +1,5 @@
-#include "Author.h"
-#include "Composition.h"
+#include "Author.h" 
+#include "Composition.h" 
 
 namespace MusicStore {
 
@@ -8,6 +8,10 @@ namespace MusicStore {
         if (firstName.empty() || lastName.empty()) {
             throw std::invalid_argument("First name and last name cannot be empty.");
         }
+    }
+    std::shared_ptr<Author> Author::createAuthor(std::string firstName, std::string lastName, std::string middleName)
+    {
+        return std::make_shared<Author>(Author(firstName, lastName, middleName));
     }
     void Author::addComposition(std::shared_ptr<Composition> composition) {
         compositions.push_back(composition);
@@ -24,15 +28,15 @@ namespace MusicStore {
         return middleName;
     }
 
-    const std::vector<std::shared_ptr<Composition>>& Author::getCompositions() const {
+    const std::vector<std::weak_ptr<Composition>>& Author::getCompositions() const {
         return compositions;
     }
 
-    std::vector<std::shared_ptr<Composition>> Author::getCompositionsByYearRange(int startYear, int endYear) const {
-        std::vector<std::shared_ptr<Composition>> result;
+    std::vector<std::weak_ptr<Composition>> Author::getCompositionsByYearRange(int startYear, int endYear) const {
+        std::vector<std::weak_ptr<Composition>> result;
         for (const auto& composition : compositions) {
-            if (composition->getReleaseYear() >= startYear && composition->getReleaseYear() <= endYear) {
-                result.push_back(composition);
+            if (composition.lock()->getReleaseYear() >= startYear && composition.lock()->getReleaseYear() <= endYear) {
+                result.push_back(composition.lock());
             }
         }
         return result;

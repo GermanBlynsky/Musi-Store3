@@ -2,6 +2,10 @@
 
 namespace MusicStore {
 
+    std::shared_ptr<Composition> Composition::createComposition(std::string title, std::string genre, int releaseYear, std::vector<std::shared_ptr<Author>> authors)
+    {
+        return std::make_shared<Composition>(Composition(title, genre, releaseYear, authors));
+    }
     Composition::Composition(std::string title, std::string genre, int releaseYear, std::vector<std::shared_ptr<Author>> authors)
         : title(title), genre(genre), releaseYear(releaseYear), authors(std::move(authors)) {
         if (this->authors.empty()) {

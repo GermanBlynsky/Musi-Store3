@@ -12,6 +12,11 @@ namespace MusicStore {
         }
     }
 
+    std::shared_ptr<Store> Store::createStore(std::string name, std::string address)
+    {
+        return std::make_shared<Store>(Store(name, address));
+    }
+
     void Store::addProduct(std::shared_ptr<Product> product) {
         products.push_back(product);
     }

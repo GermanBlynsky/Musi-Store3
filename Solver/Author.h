@@ -1,8 +1,8 @@
-#pragma once
-#include <string>
-#include <vector>
-#include <memory>
-#include <stdexcept>
+#pragma once 
+#include <string> 
+#include <vector> 
+#include <memory> 
+#include <stdexcept> 
 
 namespace MusicStore {
 
@@ -17,11 +17,10 @@ namespace MusicStore {
         std::string firstName;
         std::string lastName;
         std::string middleName;
-        std::vector<std::shared_ptr<Composition>> compositions;
-
-    public:
+        std::vector<std::weak_ptr<Composition>> compositions;
         Author(std::string firstName, std::string lastName, std::string middleName);
-
+    public:
+        static std::shared_ptr<Author> createAuthor(std::string firstName, std::string lastName, std::string middleName);
         /**
          * @brief функция добавления композиции
          * @param composition - композиция, которую мы добавляем автору
@@ -50,7 +49,7 @@ namespace MusicStore {
          * @brief Гетер для композиция данного автора
          * @return Возвращает цену
          */
-        const std::vector<std::shared_ptr<Composition>>& getCompositions() const;
+        const std::vector<std::weak_ptr<Composition>>& getCompositions() const;
 
         /**
          * @brief Функция, возвращающая композиции, выпущенные в определнный период времени (по годам)
@@ -58,6 +57,6 @@ namespace MusicStore {
          * @param endYear - конечная граница диапозона поиска нужных нам композиций
          * @return Возвращает композиции, выпущенные в указаный интервал времени
          */
-        std::vector<std::shared_ptr<Composition>> getCompositionsByYearRange(int startYear, int endYear) const;
+        std::vector<std::weak_ptr<Composition>> getCompositionsByYearRange(int startYear, int endYear) const;
     };
 }
