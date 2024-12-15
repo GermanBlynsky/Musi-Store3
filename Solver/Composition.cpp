@@ -30,4 +30,18 @@ namespace MusicStore {
     const std::vector<std::shared_ptr<Author>>& Composition::getAuthors() const {
         return authors;
     }
+
+    std::vector<std::shared_ptr<Author>>& Composition::getAuthors() {
+        return authors;
+    }
+
+    std::weak_ptr<Product> Composition::getProduct() const {
+        return product;
+    }
+
+    void Composition::setProduct(const std::shared_ptr<Product>& product)
+    {
+        this->product = product;
+    }
+
 }

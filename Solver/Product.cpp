@@ -3,8 +3,8 @@
 namespace MusicStore {
 
 
-    Product::Product(std::shared_ptr<Composition> composition, double price, std::string address, std::string carrier)
-        : composition(std::move(composition)), price(price), address(address), carrier(carrier) {
+    Product::Product(double price, std::string address, std::string carrier)
+        : price(price), address(address), carrier(carrier) {
         if (price < 0) {
             throw std::invalid_argument("Price cannot be negative");
         }
@@ -17,9 +17,9 @@ namespace MusicStore {
     }
 
 
-    std::shared_ptr<Product> Product::createProduct(std::shared_ptr<Composition> composition, double price, std::string address, std::string carrier)
+    std::shared_ptr<Product> Product::createProduct(double price, std::string address, std::string carrier)
     {
-        return std::make_shared<Product>(Product(composition, price, address, carrier));
+        return std::make_shared<Product>(Product(price, address, carrier));
     }
 
     std::shared_ptr<Composition> Product::getComposition() const {
@@ -36,5 +36,11 @@ namespace MusicStore {
 
     std::string Product::getCarrier() const {
         return carrier;
+    }
+    bool Product::AddComposition(std::shared_ptr<Composition> const& composition)
+    {
+        this->composition = composition;
+        composition->setProduct(shared_from_this());
+        return true;
     }
 }

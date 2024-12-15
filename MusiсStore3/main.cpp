@@ -19,12 +19,16 @@ int main() {
     auto composition2 = Composition::createComposition("ComposiitionName2", "Genre2", 1968, authors2);
 
     // Добавляем композиции к авторам 
-    author1->addComposition(composition1);
-    author2->addComposition(composition2);
+    auto result1_1 = author1->AddComposition(composition1);
+    auto result1_2 = author2->AddComposition(composition2);
+
 
     // Создаем продукты 
-    auto product1 = Product::createProduct(composition1, 9.99, "ProductAdress1", "CD");
-    auto product2 = Product::createProduct(composition2, 12.99, "ProductAdress2", "Vinyl");
+    auto product1 = Product::createProduct(9.99, "ProductAdress1", "CD");
+    auto product2 = Product::createProduct(12.99, "ProductAdress2", "Vinyl");
+
+    auto result2_1 = product1->AddComposition(composition1);
+    auto result2_2 = product2->AddComposition(composition2);
 
     // Создаем магазин 
     auto store = Store::createStore("Music Store", "123 Main St");

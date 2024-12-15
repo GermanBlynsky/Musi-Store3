@@ -8,11 +8,13 @@ namespace MusicStore {
 
     class Composition;
 
+    class Author;
+
     /**
      * @brief Класс Автор
      * Данный класс представляет собой автора композиции, у него есть ФИО и вектор его композиций
      */
-    class Author {
+    class Author : public std::enable_shared_from_this<Author> {
     private:
         std::string firstName;
         std::string lastName;
@@ -21,11 +23,6 @@ namespace MusicStore {
         Author(std::string firstName, std::string lastName, std::string middleName);
     public:
         static std::shared_ptr<Author> createAuthor(std::string firstName, std::string lastName, std::string middleName);
-        /**
-         * @brief функция добавления композиции
-         * @param composition - композиция, которую мы добавляем автору
-         */
-        void addComposition(std::shared_ptr<Composition> composition);
 
         /**
          * @brief Гетер для Имени
@@ -58,5 +55,11 @@ namespace MusicStore {
          * @return Возвращает композиции, выпущенные в указаный интервал времени
          */
         std::vector<std::weak_ptr<Composition>> getCompositionsByYearRange(int startYear, int endYear) const;
+        
+        /**
+         * @brief функция добавления композиции
+         * @param composition - композиция, которую мы добавляем автору
+         */
+        bool AddComposition(std::shared_ptr<Composition> const& composition);
     };
 }

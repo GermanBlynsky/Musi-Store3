@@ -13,9 +13,11 @@ namespace MusicStore {
     {
         return std::make_shared<Author>(Author(firstName, lastName, middleName));
     }
-    void Author::addComposition(std::shared_ptr<Composition> composition) {
-        compositions.push_back(composition);
-    }
+
+    //void Author::addComposition(std::shared_ptr<Composition> const& composition) {
+       // compositions.push_back(composition);
+    //}
+
     std::string Author::getFirstName() const {
         return firstName;
     }
@@ -40,5 +42,11 @@ namespace MusicStore {
             }
         }
         return result;
+    }
+    bool Author::AddComposition(std::shared_ptr<Composition> const& composition)
+    {
+        this->compositions.push_back(composition);
+        composition->getAuthors().push_back(shared_from_this());
+        return true;
     }
 }
