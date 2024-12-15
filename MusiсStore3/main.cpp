@@ -4,7 +4,6 @@
 #include "../Solver/Author.h" 
 #include "../Solver/Product.h" 
 #include "../Solver/Composition.h" 
-#include "../Solver/Store.h" 
 using namespace MusicStore;
 int main() {
 
@@ -14,32 +13,25 @@ int main() {
     std::vector<std::shared_ptr<MusicStore::Author>> authors1 = { author1 };
     std::vector<std::shared_ptr<MusicStore::Author>> authors2 = { author2 };
 
-    // Создаем композиции 
+    // РЎРѕР·РґР°РµРј РєРѕРјРїРѕР·РёС†РёРё 
     auto composition1 = Composition::createComposition("ComposiitionName1", "Genre1", 1971, authors1);
     auto composition2 = Composition::createComposition("ComposiitionName2", "Genre2", 1968, authors2);
 
-    // Добавляем композиции к авторам 
+    // Р”РѕР±Р°РІР»СЏРµРј РєРѕРјРїРѕР·РёС†РёРё Рє Р°РІС‚РѕСЂР°Рј 
     auto result1_1 = author1->AddComposition(composition1);
     auto result1_2 = author2->AddComposition(composition2);
 
 
-    // Создаем продукты 
+    // РЎРѕР·РґР°РµРј РїСЂРѕРґСѓРєС‚С‹ 
     auto product1 = Product::createProduct(9.99, "ProductAdress1", "CD");
     auto product2 = Product::createProduct(12.99, "ProductAdress2", "Vinyl");
 
     auto result2_1 = product1->AddComposition(composition1);
     auto result2_2 = product2->AddComposition(composition2);
 
-    // Создаем магазин 
-    auto store = Store::createStore("Music Store", "123 Main St");
-
-    // Добавляем продукты в магазин 
-    store->addProduct(product1);
-    store->addProduct(product2);
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-    // Ищем продукты по различным критериям 
-    std::cout << "Products by title 'ComposiitionName1':" << std::endl;
+    // РС‰РµРј РїСЂРѕРґСѓРєС‚С‹ РїРѕ СЂР°Р·Р»РёС‡РЅС‹Рј РєСЂРёС‚РµСЂРёСЏРј 
+   /* std::cout << "Products by title 'ComposiitionName1':" << std::endl;
     auto productsByTitle = store->getProductsByTitle("ComposiitionName1");
     for (const auto& product : productsByTitle) {
         std::cout << product->getComposition()->getTitle() << std::endl;
@@ -59,3 +51,4 @@ int main() {
 
     return 0;
 }
+*/

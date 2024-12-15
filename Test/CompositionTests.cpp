@@ -2,7 +2,6 @@
 #include "..\Solver\Author.h"
 #include "..\Solver\Composition.h"
 #include "..\Solver\Product.h"
-#include "..\Solver\Store.h"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace MusicStore;
 
