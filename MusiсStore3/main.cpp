@@ -31,7 +31,7 @@ int main() {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
     // Ищем продукты по различным критериям 
-   /* std::cout << "Products by title 'ComposiitionName1':" << std::endl;
+    /*std::cout << "Products by title 'ComposiitionName1':" << std::endl;
     auto productsByTitle = store->getProductsByTitle("ComposiitionName1");
     for (const auto& product : productsByTitle) {
         std::cout << product->getComposition()->getTitle() << std::endl;
@@ -48,7 +48,6 @@ int main() {
     for (const auto& product : productsByArtist) {
         std::cout << product->getComposition()->getTitle() << std::endl;
     }
-
+    */
     return 0;
 }
-*/

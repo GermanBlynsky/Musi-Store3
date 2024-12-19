@@ -29,7 +29,6 @@ namespace MusicStore {
         int getReleaseYear() const;
         const std::vector<std::shared_ptr<Author>>& getAuthors() const;
         std::vector<std::shared_ptr<Author>>& getAuthors();
-        std::weak_ptr<Product> getProduct() const;
         void setProduct(const std::shared_ptr<Product>& product);
     };
 }

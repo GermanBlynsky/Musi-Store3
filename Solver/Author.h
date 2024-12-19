@@ -49,14 +49,6 @@ namespace MusicStore {
         const std::vector<std::weak_ptr<Composition>>& getCompositions() const;
 
         /**
-         * @brief Функция, возвращающая композиции, выпущенные в определнный период времени (по годам)
-         * @param startYear - начальная граница диапозона поиска нужных нам композиций
-         * @param endYear - конечная граница диапозона поиска нужных нам композиций
-         * @return Возвращает композиции, выпущенные в указаный интервал времени
-         */
-        std::vector<std::weak_ptr<Composition>> getCompositionsByYearRange(int startYear, int endYear) const;
-        
-        /**
          * @brief функция добавления композиции
          * @param composition - композиция, которую мы добавляем автору
          */

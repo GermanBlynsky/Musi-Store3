@@ -35,10 +35,6 @@ namespace MusicStore {
         return authors;
     }
 
-    std::weak_ptr<Product> Composition::getProduct() const {
-        return product;
-    }
-
     void Composition::setProduct(const std::shared_ptr<Product>& product)
     {
         this->product = product;
