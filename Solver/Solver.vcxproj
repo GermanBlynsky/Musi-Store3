@@ -132,15 +132,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Composition.h" />
-    <ClInclude Include="Media.h" />
-    <ClInclude Include="Performer.h" />
-    <ClInclude Include="Store.h" />
+    <ClInclude Include="Product.h" />
+    <ClInclude Include="Author.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Composition.cpp" />
-    <ClCompile Include="Media.cpp" />
-    <ClCompile Include="Performer.cpp" />
-    <ClCompile Include="Store.cpp" />
+    <ClCompile Include="Product.cpp" />
+    <ClCompile Include="Author.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
